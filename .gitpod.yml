@@ -12,7 +12,7 @@ ports:
 tasks:
 # XDebug configuration is better added here, because of Docker cashing
 - name: Apache
-  init: >
+  before: >
     sudo cp .env/xdebug_cli.ini /etc/php/8.2/cli/conf.d/99-custom.ini &&
     sudo cp .env/xdebug_web.ini /etc/php/8.2/apache2/conf.d/99-custom.ini
   command: >
